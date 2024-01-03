@@ -1,0 +1,45 @@
+<!--
+  This example requires updating your template:
+
+  ```
+  <html class="h-full bg-white">
+  <body class="h-full">
+  ```
+-->
+<div class="login-form">
+    <div class="form-header">
+      <h2 class="name">Sign in to your account</h2>
+    </div>
+  
+    <div class="form-body sm:mx-auto sm:w-full sm:max-w-sm">
+      <form class="space-y-6" action="#" [formGroup]="loginForm">
+        <div>
+          <label for="email" class="label">Email address</label>
+          <div class="mt-2">
+            <input id="email" name="email" type="email" autocomplete="email" required class="field" formControlName="email">
+          </div>
+        </div>
+  
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="label">Password</label>
+            <div class="text-sm">
+              <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+            </div>
+          </div>
+          <div class="mt-2">
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="field" formControlName="password">
+          </div>
+        </div>
+  
+        <div>
+          <button type="submit" class="button rounded-md" (click)="login()">Sign in</button>
+        </div>
+      </form>
+  
+      <p class="mt-10 text-center text-sm text-gray-500">
+        Not a member?
+        <a href="#" [routerLink]="['/registration']" class="link font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register</a>
+      </p>
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+
+.login{
+    color: rgb(31 41 55 / 1);
+    font-weight: 500;
+    border-radius: 0.5rem/* 8px */;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem/* 8px */;
+  
+    @media lg{
+      padding: 0.625rem 1.25rem;
+    }
+  }
+  
+  .menu-items{
+   display: flex;
+    padding: 0.5rem 1rem 0.5rem 0.75rem;
+    color: rgb(55 65 81 / 1);
+    border-bottom-width: 1px;
+    border-color: rgb(243 244 246 / 1);
+    
+    @media lg {
+      background-color: transparent;
+      border: 0;
+      color: inherit;
+      padding: 0;
+      border-width: 0px;
+  
+      &.hover{
+        background-color: transparent;
+        color: #1a202c;
+      }
+    }
+  
+  }
+  
+  .menu-items:hover{
+    background-color: rgb(249 250 251 / 1);
+  }

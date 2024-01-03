@@ -1,0 +1,15 @@
+<!-- <p>home-page works!</p>
+<ng-container *ngFor="let realEstate of realEstates; let i = index">
+    <ng-container *ngIf="images$ | async as images">
+      <app-real-estate-card [realEstate]="realEstate" [image] = "images[i]" ></app-real-estate-card>
+    </ng-container>
+</ng-container> -->
+<div class="content">
+<div class="real-estate-container">
+  <ng-container *ngFor="let realEstate of realEstates; let i = index">
+    <ng-container *ngIf="images$ | async as images">
+      <app-real-estate-card [realEstate]="realEstate" [image]="images[i]"></app-real-estate-card>
+    </ng-container>
+  </ng-container>
+</div>
+</div>
