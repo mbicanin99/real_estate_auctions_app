@@ -11,11 +11,6 @@ export class AuthService {
 
   constructor(private router: Router) { }
 
-  // private registeredUsers: UserEntity[] = [
-  // { id: 1, firstName:"Milica", lastName:"Bicanin", email:"admin@gmail.com", password:"mb", role: Roles.ADMIN},
-  // { id: 2, firstName:"Milica", lastName:"Bicanin", email:"korisnik@gmail.com", password:"mb", role: Roles.USER}]; //users list
-
-
   private currentUser: UserEntity|null = null; //currently logged user
   private userId: number=2;
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { EMPTY, Observable, catchError, iif, map, of, switchMap } from 'rxjs';
 import { Roles } from '../utils/enums/roles.enum';
 import { AuthService } from '../auth/services/auth.service';
-import { Store } from '@ngrx/store';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
-import { EMPTY, Observable, catchError, iif, map, of, switchMap } from 'rxjs';
 import { UserEntity } from '../utils/types/user.type';
 import { selectCurrentUser } from '../auth/login-page/store/reducers/login.reducer';
 
@@ -59,30 +59,6 @@ export class AuthGuard {
   private unauthorizedRedirect(): void{
     this.router.navigate(['login']);
   }
-
-  // canActive(activeRoute: ActivatedRouteSnapshot): boolean{
-  //   this.roles=activeRoute.data['canAccess'];
-
-  //   this.currentUser=this.authService.getCurrentUser();
-  //   if(!this.currentUser){
-  //     console.error('No user found. Redirecting to login.');
-  //     this.router.navigate(['/login']);
-  //   }
-      
-  //   const hasRole: boolean = this.roles.some(
-  //       (role: Roles) => role === this.currentUser.role,
-  //   );
-
-  //   if (hasRole) {
-  //       console.log('Authorized.');
-  //       return true;
-  //   } else {
-  //       console.error('Not authorized. Redirecting to login.');
-  //       this.router.navigate(['/login']);
-  //       return false;
-  //   }
-
-  //   }
     
   };
 

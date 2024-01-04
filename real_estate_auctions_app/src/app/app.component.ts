@@ -3,7 +3,6 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { UserEntity } from "./utils/types/user.type";
 import { Roles } from "./utils/enums/roles.enum";
-import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,7 @@ export class AppComponent implements OnInit{
    private admins: UserEntity[] = [
     { id: 1, firstName:"Milica", lastName:"Bicanin", email:"admin@gmail.com", password:"mb", role: Roles.ADMIN},
     { id: 2, firstName:"Milica", lastName:"Bicanin", email:"korisnik@gmail.com", password:"mb", role: Roles.ADMIN}
-  ]; //users list
+  ]; //admins list
 
    constructor(private store: Store){
   }

@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/api-services/api.service';
 import { AppImage } from 'src/app/utils/types/image.interface';
 import { HomeActions } from './store/actions/home.actions';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { selectImages } from './store/reducer/home.reducer';
 import { RealEstate } from 'src/app/utils/types/real-estate.type';
 
