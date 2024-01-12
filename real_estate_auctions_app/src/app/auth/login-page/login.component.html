@@ -1,37 +1,39 @@
-<div class="login-form">
-    <div class="form-header">
-      <h2 class="name">Sign in to your account</h2>
-    </div>
-  
-    <div class="form-body sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="#" [formGroup]="loginForm">
-        <div>
-          <label for="email" class="label">Email address</label>
-          <div class="mt-2">
-            <input id="email" name="email" type="email" autocomplete="email" required class="field" formControlName="email">
-          </div>
-        </div>
-  
-        <div>
-          <div class="flex items-center justify-between">
-            <label for="password" class="label">Password</label>
-            <div class="text-sm">
-              <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+  <div class="content flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+    <div class="bg-white p-8 rounded-lg shadow-lg  w-full max-w-md">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Sign in to your account</h2>
+
+        <form class="space-y-4"  [formGroup]="loginForm">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                <input id="email" formControlName="email" name="email" type="email" autocomplete="email" appInputValidation="email" required class="mt-1 p-2 w-full rounded-md border border-gray-300">
+                <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched"
+                class="error-message">
+                Please enter a valid email address.
+              </div>
             </div>
-          </div>
-          <div class="mt-2">
-            <input id="password" name="password" type="password" autocomplete="current-password" required class="field" formControlName="password">
-          </div>
-        </div>
-  
-        <div>
-          <button type="submit" class="button rounded-md" (click)="login()">Sign in</button>
-        </div>
-      </form>
-  
-      <p class="mt-10 text-center text-sm text-gray-500">
-        Not a member?
-        <a href="#" [routerLink]="['/registration']" class="link font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register</a>
-      </p>
+
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input id="password" formControlName="password" name="password" type="password" autocomplete="current-password" appInputValidation="password" required class="mt-1 p-2 w-full rounded-md border border-gray-300">
+                <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"
+                class="error-message">
+                Password is required.
+                </div>
+            </div>
+
+            <div *ngIf="!userNotExists" class="error-message">
+                User does not exist or incorrect credentials.
+            </div>
+
+            <div>
+                <button type="submit" class="w-full py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring focus:border-blue-300" (click)="login()">
+                    Sign in
+                </button>
+            </div>
+        </form>
+
+        <p class="mt-6 text-sm text-gray-600">
+            Not a member? <a href="#" [routerLink]="['/registration']" class="font-medium text-indigo-600 hover:text-indigo-500">Register</a>
+        </p>
     </div>
-  </div>
+</div>
