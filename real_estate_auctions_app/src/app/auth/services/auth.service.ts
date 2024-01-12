@@ -24,11 +24,11 @@ export class AuthService {
       this.currentUser = existingUser;
       localStorage.setItem('user', JSON.stringify(this.currentUser));
       this.router.navigate(['/home'])
-      console.log("Current user u servisu offf",of(this.currentUser))
       return of(this.currentUser);
     } else {
       console.error('User with this password and email is not found!');
-      return throwError('User not found');
+      localStorage.setItem('user', JSON.stringify(this.currentUser));
+      return of(null);
     }
 }
 

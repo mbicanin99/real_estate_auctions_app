@@ -57,7 +57,7 @@ export class AuthGuard {
   }
 
   private unauthorizedRedirect(): void{
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
     
   };
