@@ -10,6 +10,7 @@ import { homeFeature } from './store/reducer/home.reducer';
 import { HomePageComponent } from './home.component';
 import { RealEstateCardComponent } from './real-estate-card/real-estate-card.component';
 import { ApiService } from 'src/app/api-services/api.service'
+import { DescriptionPipes } from 'src/app/pipes/description.pipe';
 
 
 const routes: Routes = [{
@@ -19,7 +20,7 @@ const routes: Routes = [{
 ]
 
 @NgModule({
-  declarations: [HomePageComponent, RealEstateCardComponent],
+  declarations: [HomePageComponent, RealEstateCardComponent, DescriptionPipes],
   exports: [],
   imports: [
     CommonModule,
