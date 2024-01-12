@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
    title = 'real_estate_auctions_app';
    private admins: UserEntity[] = [
     { id: 1, firstName:"Milica", lastName:"Bicanin", email:"admin@gmail.com", password:"mb", role: Roles.ADMIN},
-    { id: 2, firstName:"Milica", lastName:"Bicanin", email:"korisnik@gmail.com", password:"mb", role: Roles.ADMIN}
+    { id: 2, firstName:"Milica", lastName:"Bicanin", email:"admin2@gmail.com", password:"mb", role: Roles.ADMIN}
   ]; //admins list
 
    constructor(private store: Store){

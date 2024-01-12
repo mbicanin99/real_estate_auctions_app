@@ -10,6 +10,7 @@ import { AuthComponent } from './auth/auth.component';
 import { HeaderAppModule } from './core/layout/header/header-app/header-app.module';
 import { PagesComponent } from './pages/pages.component';
 import { FooterModule } from './core/layout/footer/footer.module';
+import { FooterComponent } from './core/layout/footer/footer.component';
 
 @NgModule({
   declarations: [AppComponent, AuthComponent, PagesComponent],
