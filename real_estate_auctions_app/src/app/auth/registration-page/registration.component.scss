@@ -1,8 +1,19 @@
-.registartion-form{
-    background-color: #F9FAFB;
 
-    &.dark-mode {
-      background-color: #111827; 
+    .content{
+      height: 100hv;
+      padding: 3.5%;
+    }
+  
+    .invalid-input {
+      border-color: #ff0000; /* Crvena boja za nevalidne inpute */
     }
     
-  }
+    .valid-input {
+      border-color: #00ff00; /* Zelena boja za validne inpute */
+    }
+
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }

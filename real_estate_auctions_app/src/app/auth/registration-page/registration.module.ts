@@ -8,6 +8,7 @@ import { RegistrationPageComponent } from './registration.component';
 import { AuthService } from '../services/auth.service';
 import { registrationFeature } from './store/reducer/registration.reducer';
 import { RegistrationEffects } from './store/effect/registration.effect';
+import { InputValidationDirective } from 'src/app/directives/input-validation.directive';
 
 const routes: Routes = [
   {
@@ -17,14 +18,15 @@ const routes: Routes = [
 ]
 @NgModule({
   declarations: [
-    RegistrationPageComponent
+    RegistrationPageComponent, InputValidationDirective
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature(registrationFeature),
-    EffectsModule.forFeature([RegistrationEffects])
+    EffectsModule.forFeature([RegistrationEffects]),
+   
   ],
   providers:[
     AuthService
